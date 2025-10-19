@@ -18,12 +18,12 @@ app.add_middleware(
 todos: dict[int, Todo] = {}
 next_id = 1
 
-@app.get("/todos", response_model=list[Todo])
+@app.get("/todos", response_model=list[Todo], operation_id="listTodos")
 def list_todos():
     """Get all todos"""
     return list(todos.values())
 
-@app.post("/todos", response_model=Todo)
+@app.post("/todos", response_model=Todo, operation_id="createTodo")
 def create_todo(todo_data: TodoCreate):
     """Create a new todo"""
     global next_id
@@ -38,14 +38,14 @@ def create_todo(todo_data: TodoCreate):
 
     return todo
 
-@app.get("/todos/{todo_id}", response_model=Todo)
+@app.get("/todos/{todo_id}", response_model=Todo, operation_id="getTodo")
 def get_todo(todo_id: int):
     """Get a specific todo"""
     if todo_id not in todos:
         raise HTTPException(status_code=404, detail="Todo not found")
     return todos[todo_id]
 
-@app.put("/todos/{todo_id}", response_model=Todo)
+@app.put("/todos/{todo_id}", response_model=Todo, operation_id="updateTodo")
 def update_todo(todo_id: int, todo_data: TodoUpdate):
     """Update a todo"""
     if todo_id not in todos:
@@ -60,7 +60,7 @@ def update_todo(todo_id: int, todo_data: TodoUpdate):
 
     return todo
 
-@app.delete("/todos/{todo_id}", status_code=204)
+@app.delete("/todos/{todo_id}", status_code=204, operation_id="deleteTodo")
 def delete_todo(todo_id: int):
     """Delete a todo"""
     if todo_id not in todos:
