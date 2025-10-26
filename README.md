@@ -5,7 +5,7 @@ A simple todo app demonstrating how to build a full-stack application with:
 - **Frontend**: SvelteKit SPA with TypeScript
 - **Type Safety**: Auto-generated TypeScript API client using Orval
 
-This code accompanies the blog post: [Svelte SPA and FastAPI Integration Tutorial](https://turtledev.io/blog/svelte-spa-fastapi-integration-tutorial)
+This code accompanies the blog post: [Svelte SPA and FastAPI Integration Tutorial](https://turtledev.io/blog/how-to-build-sveltekit-spa-with-fastapi-backend)
 
 ## Project Structure
 
@@ -94,4 +94,4 @@ Frontend runs at `http://localhost:5173`
 
 ## Learn More
 
-Read the full tutorial: [Svelte SPA and FastAPI Integration Tutorial](https://turtledev.io/blog/svelte-spa-fastapi-integration-tutorial)
+Read the full tutorial:  [Svelte SPA and FastAPI Integration Tutorial](https://turtledev.io/blog/how-to-build-sveltekit-spa-with-fastapi-backend)
